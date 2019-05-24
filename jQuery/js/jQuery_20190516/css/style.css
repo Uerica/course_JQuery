@@ -1,0 +1,18 @@
+/*7_addClass.html + 8_removeClass.html + 13_bind_on.html*/
+.highlight{
+	background: yellow;
+}
+
+/*14_textHover.html*/
+.textHover{
+	cursor:pointer;
+}
+#theDiv{
+	border: 1px solid #ccc;
+	color: #888;
+	padding: 5px;
+	background: #fff;
+
+	position: absolute;
+	display: none;
+}

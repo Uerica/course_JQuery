@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="jQuery/js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var imgWidth = $('img').width();
+            var imgHeight = $('img').height();
+
+            var winWidth = $(document).width();
+            var winHeight = $(document).height();
+
+            $('img').css({
+                width: winWidth,
+                height: winHeight,
+            })
+
+        });
+    </script>
+    <title>jQuery</title>
+</head>
+
+<body>
+    <img src="img/img2.jpg">
+    <p id="feedback"></p>
+</body>
+
+</html>

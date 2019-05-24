@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<script src="jQuery/js/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			// 用CSS尋找寬度和高度
+			/*====
+			var imgWidth = $('img').css('width');
+			var imgHeight = $('img').css('height');
+			$('#feedback').text(`Width: ${imgWidth} | Height: ${imgHeight}`);
+			====*/
+
+			// 用HTML尋找寬度和高度
+			/*====XXXX
+			var imgWidth = $('img').attr('width');
+			var imgHeight = $('img').attr('height');
+			$('#feedback').text(`Width: ${imgWidth} | Height: ${imgHeight}`);
+			====*/
+
+			// 用jQuery尋找寬度和高度
+			var imgWidth = $('img').width();
+			var imgHeight = $('img').height();
+			$('#feedback').text(`Width: ${imgWidth} | Height: ${imgHeight}`);
+		});
+	</script>
+	<title>jQuery</title>
+</head>
+
+<body>
+	<img src="img/img2.jpg">
+	<p id="feedback"></p>
+</body>
+
+</html>

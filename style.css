@@ -1,0 +1,56 @@
+/**{
+	margin: 0px;
+	padding: 0px;
+}*/
+/*7_addClass.html + 8_removeClass.html + 13_bind_on.html*/
+.highlight{
+	background: yellow;
+}
+
+/*14_textHover.html*/
+.textHover{
+	cursor:pointer;
+}
+#theDiv{
+	border: 1px solid #ccc;
+	color: #888;
+	padding: 5px;
+	background: #fff;
+
+	position: absolute;
+	display: none;
+}
+/*15_topMessage.html*/
+#topMessage{
+	background: #777;
+	color: #fff;
+	font: 20px Tahoma;
+	width: 600px;
+	text-align: center;
+	padding: 10px 0px;
+	margin: 0px auto;
+
+	display: none;
+}
+
+/*17_animation.html*/
+.myPhoto{
+	width: 100px;
+}
+#imgBoard{
+	width: 100px;
+	background: #aaa;
+	padding: 5px 30px;
+
+	position: absolute;
+	left: -130px;
+}
+
+/*26_centerOfWindow.html*/
+#inCenter{
+	width: 200px;
+	height: 200px;
+	background: #ccc;
+
+	position: absolute;
+}
