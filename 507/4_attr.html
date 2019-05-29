@@ -12,7 +12,7 @@
 			$(':text').click(function(){
 				alert('hi~');
 			});
-			$('input[type="email"]').click(function(){
+			$('input[type="email"]').click(function(){ //email只能用input[type="email"]
 				alert('hello~');
 			});
 			// $(':submit').click(function(){
@@ -29,16 +29,37 @@
 
 			$('textarea').focus(function(){
 				$(this).attr({
-					rows: 5,
+					rows: 0,
 					cols: 30,
 				});
 			});
 		});
 	</script>
+	<script>
+	$(document).ready(function(){
+		$(':text').attr('value','hihihi');
+		$(':text').click(function(){
+			alert('yoyoyo');
+		})
+		
+		$(':submit').click(function(){
+			$(this).attr('value','請稍後');
+		});
+		
+		$('textarea').focus(function(){
+			$(this).attr({
+				rows:50,
+				cols:30,
+			})
+		})
+	})
+	
+	</script>
+	
 </head>
 <body>
 	<!-- <form> -->
-		<input type="text" value="123">
+		<input type="text" value="yoyo">
 		<input type="submit" value="Submit">
 		<input type="submit" value="Upload">
 		<input type="email" name="email">

@@ -61,6 +61,21 @@
 			
 		});
 	</script>
+	<script>
+	$(document).ready(function(){
+		$('textarea').focus(function(){
+			$(this).css({
+				backgroundColor:'red',
+				fontSize:'20px',
+			})
+		}).blur(function(){
+			$(this).css({
+				backgroundColor:'transparent',
+				fontSize:'10px',
+			})
+		})
+	})
+	</script>
 </head>
 <body>
 	<p>

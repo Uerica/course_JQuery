@@ -16,6 +16,15 @@
 
 		});
 	</script>
+	<script>
+	$(document).ready(function(){
+	var thetext = $('#box p').text();
+	alert(thetext);
+	
+	$('#box p').html('<span style="color:pink;">hihi</span> yoyoyo');
+	})
+	//Q alert為何會去抓上面的jq程式碼??
+	</script>
 </head>
 <body>
 	<div id="box">

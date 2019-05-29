@@ -4,11 +4,30 @@
 	<meta charset="UTF-8">
 	<title>jQuery</title>
 	<script src="js/jquery-3.4.1.min.js"></script>
+	<style>
+	p{
+		background-color: #fff;
+		/* color: aquamarine */
+	}
+	</style>
 	<script>
-		$(document).ready(function(){ //document
-			$('p').css('font-size','36px');//css寫法
+		$(document).ready(function(){ //所有效果要等html載完才會執行,如果寫在前面要加$(document).ready(function(){})
+			$('p').css('font-size','36px');//css寫法 前面$('')直接填css選擇
 		});
 	</script>
+	
+	<script>
+			$(document).ready(function(){
+				$('p').css('font-size','50px').css('color','red');//多個css寫法
+			})
+	</script>
+
+	<script>
+	$(document).ready(function(){
+		$('p').text('helloyoyo').css('color','pink');//多個css寫法
+	})
+	</script>
+	
 </head>
 <body>
 	<p>Lorem ipsum dolor sit amet.</p>
