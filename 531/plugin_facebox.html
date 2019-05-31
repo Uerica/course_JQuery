@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/facebox.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/facebox.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("a").facebox({
+          closeImage: "img/closelabel.png"
+        });
+      });
+    </script>
+    <title>jQuery plugin - facebox</title>
+  </head>
+  <body>
+    <a href="/img/doggy.jpeg">柴柴</a>
+    <a href="/img/doggy2.jpg">米克斯</a>
+    <a href="/img/doggy3.jpg">兩隻狗</a>
+    <a href="/img/dau01.jpg">曲翑</a>
+  </body>
+</html>

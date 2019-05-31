@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-qrcode-0.17.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("button").click(function() {
+          var theURL = $("#source").val();
+          $("#result").text("");
+          $("#result").qrcode({
+            //產生QRcode
+            text: theURL,
+            size: 200,
+            // fill: 'steelblue',
+            mode: 1,
+            label: theURL
+          });
+        });
+      });
+    </script>
+    <title>jQuery plugin - QRcode</title>
+  </head>
+  <body>
+    <p>
+      <label>輸入網址:</label>
+      <input type="text" id="source" />
+      <button>Generate QRcode</button>
+    </p>
+    <div id="result"></div>
+  </body>
+</html>
