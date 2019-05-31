@@ -9,7 +9,7 @@ $('#bigButton').click(function(){
 });
 
 function changeSize(size){
-	var currentSize = parseInt($('#names li').css('fontSize'));
+	var currentSize = parseInt($('#names li').css('fontSize')); //字串轉成整數
 
 	if(size=='small'){
 		newSize = currentSize - 1;

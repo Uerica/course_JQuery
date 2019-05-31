@@ -1,1 +1,2 @@
 507-3 //Q alert為何會去抓上面的jq程式碼??
+8 if($.trim(searchName)!='') 意思??

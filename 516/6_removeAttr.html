@@ -7,9 +7,16 @@
 		<script>
 			$(document).ready(function(){
 				$(':file').change(function(){
-					$(':submit').removeAttr('disabled');
+					$(':submit').removeAttr('disabled');//disabled表示按鈕不能按的屬性 所以未選擇檔案前不能按按鈕 選擇後才可以按
 				});
-			});			
+			});
+		</script>
+		<script>
+		$(document).ready(function(){
+			$(':file').change(function(){
+				$(':submit').removeAttr('disabled');
+			})
+		})
 		</script>
 		<title>jQuery</title>
 	</head>

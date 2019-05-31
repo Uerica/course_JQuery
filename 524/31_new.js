@@ -21,5 +21,19 @@ $(document).ready(function(){
 		$('#content').animate({
 			left: divWidth * index * -1,
 		});
-	});	
+	});
+
+	setInterval(function(){
+		index += 1;
+		$("#contentButton li").removeClass("clickMe");
+		$("#contentButton li:nth-child(" + ((index % imgCount) + 1) + ")").addClass(
+		  "clickMe"
+		);
+		$("#content").animate(
+		  {
+			left: divWidth * (index % imgCount) * -1
+		  },
+		  500
+		);
+	  }, 3000);
 });
