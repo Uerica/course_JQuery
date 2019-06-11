@@ -1,0 +1,10 @@
+label,
+button {
+  text-transform: capitalize;
+  font: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+label {
+  width: 80px;
+  float: left;
+}
