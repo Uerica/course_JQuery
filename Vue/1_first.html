@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+</head>
+<body>
+
+	<div id="app">
+		<!-- <h1>{{message}}</h1>
+		<p>{{message}}</p>
+		<input type="text" v-model="message"> -->
+		{{message}} <br>
+		{{score * 0.8}}
+	</div>
+
+	<script src="js/vue.js"></script>
+	<script>
+		new Vue({
+			el: '#app',		//document.getElemenById('app);
+			data: {			//放變數
+				message: 'Hello, Vue!',
+				score: 80,
+			},
+		});
+	</script>
+</body>
+</html>

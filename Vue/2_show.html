@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+</head>
+<body>
+
+	<div id="app">
+		<p>{{message}}</p>
+		<p v-show="loading">載入</p>
+	</div>
+
+	<script src="js/vue.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {			//放變數
+				message: 'Hello, Vue!',
+				score: 80,
+				loading: false,
+			},
+		});
+	</script>
+</body>
+</html>

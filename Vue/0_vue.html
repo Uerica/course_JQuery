@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>vue</title>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+      <p>{{ message }}</p>
+      <p>{{ score * 99 }}</p>
+      <p>{{ aaa * 99 }}</p>
+      <p v-show="loading_a">要出現</p>
+      <p v-show="loading_b">不出現</p>
+      <input type="text" v-model="message" />
+      <div v-if="score> 2000">
+        Now you see me
+      </div>
+      <div v-else>
+        Now you don't
+      </div>
+      <div v-for="color in colors">
+        {{ color }}
+      </div>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Vue!",
+          num: 5,
+          score: 80,
+          aaa: 11,
+          loading_a: true,
+          loading_b: false,
+          colors: ["red", "yellow", "blue", "black", "green"]
+        
+          classmate:[]
+        
+        }
+      });
+    </script>
+  </body>
+</html>
