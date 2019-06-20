@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo List</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      body {
+        background: #ccc;
+      }
+      form {
+        background: #fff;
+        width: 350px;
+        padding: 10px;
+        margin: 150px auto;
+      }
+      div {
+        margin: 10px;
+      }
+    </style>
+    <script src="new.js"></script>
+  </head>
+  <body>
+    <form id="theForm">
+      <fieldset>
+        <legend>Enter an item to be done</legend>
+        <div>
+          <label>Task: </label>
+          <input type="text" id="task" />
+        </div>
+        <div>
+          <input type="submit" id="submit" value="Add!" />
+        </div>
+        <div id="output"></div>
+      </fieldset>
+    </form>
+  </body>
+</html>
