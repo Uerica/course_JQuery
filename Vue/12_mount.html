@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vue--mount(掛載)</title>
+</head>
+<body>
+    <div id="app">  
+       <h3>{{message}}</h3>    
+    </div>
+
+    <script src="js/vue.js"></script>
+	<script>
+        //先建一個Vue的instance，再將它mount(掛載)到DOM上面
+
+        // 掛載1: el
+		// new Vue({
+		// 	el: '#app',
+		// 	data: {
+        //         message: 'Hello, Vue!',             				
+        //     },
+        // });
+        
+        // 掛載2: $mount
+        // let vm = new Vue({
+        //     data: {
+        //         message: 'Hello, Vue!',             				
+        //     },
+        // });
+
+        // vm.$mount('#app');
+
+        // 掛載3: data
+        const data = {
+            x: 5,
+            y: 10,
+        };
+        let vm = new Vue({
+            el: '#app',
+			data: data,
+        });
+
+        vm.x = 100;
+        vm.$data = data;
+
+	</script>
+</body>
+</html>
