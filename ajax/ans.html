@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+     <table border="1">        
+        <tr>
+            <td style="color: #ff00ff; background-color:#FFFFFF">Q</td>
+            <td style="background-color: #442244; color: #442244">Y</td>
+            <td style="color: #FFFF00; background-color:#442244">A</td>
+        </tr>
+        <tr>
+            <td style="color: #FFEEFE; background-color:#990000">Q</td>
+            <td style="color: #FFFF00; background-color:#FF0">M</td>
+            <td style="color: #000000; background-color:#FF7777">O</td>
+        </tr>
+    </table>
+    <p></p>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+            var trLength = $('table tr').length; 
+            theAns = [];
+
+            for(var i = 0; i < trLength; i++){
+                var tdLength = $('table tr')[i].childElementCount; 
+                for(var j = 0; j < tdLength; j++){
+
+
+                    theColor = $('table tr:eq('+i+') td:eq('+j+')').css('color') ;
+                    // alert(theColor)
+
+                    var theBGColor = $('table tr:eq('+i+') td:eq('+j+')').css('background-color'); 
+                    // alert(theBGColor)  
+                   
+                   	
+                    if(theColor !== theBGColor){
+                        theAns.push($('table tr:eq('+i+') td:eq('+j+')').text());    
+                    }
+                }
+			}
+			$('p').text(theAns);
+    </script>
+</body>
+</html>
+<body>

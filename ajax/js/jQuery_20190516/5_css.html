@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<style>
+		label{
+			text-transform: capitalize;
+			font: normal 18px Tahoma;
+			width: 120px;
+			float: left;
+		}
+	</style>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			// $(':text').focus(function(){
+				// $(this).css('background-color','yellow).css('font-size','18px');
+				// $(this).css('backgroundColor','yellow').css('fontSize','18px');
+			// });
+
+			// $(':text').focus(function(){
+			// 	$(this).css({
+			// 		backgroundColor:'yellow',
+			// 		fontSize:'18px'
+			// 	});
+			// });
+
+			//step1 $(':text').focus().blur();
+			//step2 $(':text').focus(function(){}).blur(function(){});
+			//step3
+			$(':text').focus(function(){
+				$(this).css({
+					backgroundColor:'yellow',
+					fontSize:'18px',
+				});
+			}).blur(function(){
+				$(this).css({
+					backgroundColor:'transparent',
+					fontSize:'16px',
+				});
+			});
+
+			$('textarea').focus(function(){
+				// $(this).css().attr();
+				// $(this).css({}).attr({});
+				$(this).css({
+					backgroundColor:'yellow',
+					fontSize:'18px',
+				}).attr({
+					rows: 5,
+					cols: 30,
+				});
+				
+			}).blur(function(){
+				$(this).css({
+					backgroundColor:'transparent',
+					fontSize:'16px',
+				});
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<p>
+		<label>your name: </label>
+		<input type="text" id="name">
+	</p>
+	<p>
+		<label>comments: </label>
+		<textarea></textarea>
+	</p>
+		
+</body>
+</html>
