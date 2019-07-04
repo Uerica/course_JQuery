@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <style>
+      h1 {
+        color: palevioletred;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="checkbox" v-model="time" value="morning" /><label
+        >morning</label
+      >
+      <input type="checkbox" v-model="time" value="afternoon" /><label
+        >afternoon</label
+      >
+      <input type="checkbox" v-model="time" value="evening" /><label
+        >evening</label
+      >
+      <h1>{{ time }}</h1>
+    </div>
+
+    <script>
+      //v-model = 雙向綁定;
+      new Vue({
+        el: "#app",
+        data: {
+          //   agree: false
+          time: []
+        },
+        methods: {}
+      });
+    </script>
+  </body>
+</html>

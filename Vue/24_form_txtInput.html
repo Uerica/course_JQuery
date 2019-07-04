@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <style>
+        /* 換行寫法 */
+      h1 {
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <input type="text" v-model="message" /> -->
+      <textarea v-model="message"></textarea>
+      <h1>{{ message }}</h1>
+    </div>
+
+    <script>
+      //v-model = 雙向綁定;
+      new Vue({
+        el: "#app",
+        data: {
+          message: ""
+        }
+      });
+    </script>
+  </body>
+</html>

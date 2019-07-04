@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <style>
+      h1 {
+        color: palevioletred;
+      }
+
+      .hi {
+        width: 100px;
+        height: 20px;
+        border: 1px palevioletred solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <select v-model="year">
+        <option value="" disabled>select year</option>
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
+      </select> -->
+
+      <!-- <select v-model="selectYear">
+        <option v-for="year in years">{{year}}</option>
+      </select>
+      <h1>{{selectYear}}</h1>
+
+      <div class="hi" v-for="year in years">
+        <p>{{year}}</p>
+      </div> -->
+
+      <select v-model="selectMonth">
+        <option v-for="month in 12">{{ month }}</option>
+      </select>
+      <h1>{{ selectMonth }}</h1>
+
+      <select v-model="selectYear">
+        <option v-for="year in years">{{ year }}</option>
+      </select>
+      <h1>{{ selectYear }}</h1>
+    </div>
+
+    <script>
+      //v-model = 雙向綁定;
+      new Vue({
+        el: "#app",
+        data: {
+          // years:[2017,2018,2019],
+          // selectYear:'2017',
+          selectMonth: "1",
+          selectYear: "2019",
+          years: [2000, 2001, 2002, 2003]
+          // years:'2019'
+        },
+        methods: {}
+      });
+    </script>
+  </body>
+</html>
