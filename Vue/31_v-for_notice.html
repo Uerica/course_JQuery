@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue--v-for將陣列render成元素</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <style>
+      button {
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <button @click="action_push">push</button>
+        <button @click="action_pop">pop</button>
+        <button @click="action_unshift">unshift</button>
+        <button @click="action_shift">shift</button>
+        <button @click="action_splice">splice</button>
+        <button @click="action_slice">slice</button>
+        <button @click="action_reverse">reverse</button>
+        <button @click="action_sort">sort</button>
+        <button @click="action_filter">filter</button>
+        <button @click="action_splice2">splice清空陣列</button>
+        <button @click="action_slice2">slice清空陣列</button>
+
+        <li v-for="num in nums">{{ num }}</li>
+      </ul>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          nums: [1, 2, 3, 4, 5]
+        },
+        methods: {
+          //從後新增值
+          action_push() {
+            this.nums.push(this.nums.length + 1);
+          },
+          //從後刪除值
+          action_pop() {
+            this.nums.pop();
+          },
+          //從前新增值
+          action_unshift() {
+            this.nums.unshift(0);
+          },
+          //從前刪除值
+          action_shift() {
+            this.nums.shift();
+          },
+          //切割陣列並給予新值 splice(索引值,刪除幾個,給予值,給予值)
+          action_splice() {
+            this.nums.splice(3, 1, 100, 200);
+          },
+          //切割陣列
+          action_slice() {
+            this.nums = this.nums.slice(0, 3);
+            //slice(from11), 3)
+          },
+          //陣列反向排列
+          action_reverse() {
+            this.nums.reverse();
+          },
+          //重新排序,以數字首排列
+          action_sort() {
+            this.nums.sort();
+          },
+          //條件篩選後回傳新陣列
+          action_filter() {
+            this.nums = this.nums.filter(val => val % 2 === 0);
+          },
+          //splice清空陣列,會改變原陣列
+          action_splice2() {
+            this.nums.splice(0);
+          },
+          //slice清空陣列,會改變原陣列
+          action_slice2() {
+            this.nums = this.nums.slice(this.nums.length);
+            //slice(from,to) from開始切到to 不包含to 會回傳
+            //slice(value) 只給一個值代表全切除
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

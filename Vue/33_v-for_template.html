@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue--v-for render template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <h1>Products</h1><hr>
+         <h1>Private Policy</h1><hr>
+         <h1>Contact</h1><hr>
+         <h1>Shopping Cart</h1><hr> -->
+      <template v-for="(header,index) in headers">
+        <h1>
+          <span>{{ index + 1 }}</span> {{ header }}
+        </h1>
+        <img :src="imgs" width="100" />
+        <hr />
+      </template>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          headers: ["Products", "Private Policy", "Contact", "Shopping Cart"],
+          imgs: "../images/dino.gif"
+        },
+        methods: {}
+      });
+    </script>
+  </body>
+</html>

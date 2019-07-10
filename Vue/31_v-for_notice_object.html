@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue--v-for的注意事項</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <!-- <li v-for="num in nums">{{num}}</li> -->
+        <li v-for="(num,key) in nums">{{ key }} : {{ num }}</li>
+      </ul>
+      <button @click="action">Click</button>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          //物件
+          nums: {
+            x: 5,
+            y: 10
+          }
+        },
+        methods: {
+          action() {
+            //物件
+            // this.nums.z = 15;   //不能的原因是:原本的物件裡，沒有這個key值
+            this.nums.x = 100;
+            // this.$set(設定的物件,key,value);
+            // this.$set(this.nums,'z',15);
+            Vue.set(this.nums, "z", 15);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

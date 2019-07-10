@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue--v-for將陣列render成元素</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <!-- value是主體所以寫在key前面 -->
+        <!-- 在此物件順序不照撰寫順序排列 -->
+        <!-- <div v-for="(value,key) in me">{{key}}--{{value}}</div> -->
+        <div v-for="item in me">{{item.key}}--{{item.value}}</div>
+    </div>
+    
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+            // me:{
+            //     name:'柔柔',
+            //     age:'17',
+            //     password:'123456',
+
+            //     18:'嗨',
+            //     20:'嗨嗨',
+            //     27:'嗨嗨嗨',
+            //     16:'嗨嗨嗨嗨',
+            //     5:'嗨嗨嗨嗨嗨'
+            // }
+            //想照順序就用陣列
+
+            me:[
+                {key:'name',value:'柔柔'},
+                {key:'age',value:'17'},
+                {key:'password',value:'123456'},
+                {key:'18',value:'嗨'},
+                {key:'20',value:'嗨嗨'},
+                {key:'27',value:'嗨嗨嗨'},
+                {key:'16',value:'嗨嗨嗨嗨'}
+            ]
+        },
+        methods: {}
+     });
+    </script>
+
+  </body>
+</html>
