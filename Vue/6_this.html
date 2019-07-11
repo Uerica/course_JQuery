@@ -1,80 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Vue</title>
-  </head>
-  <body>
-    <div id="app">
-      <h3>Rainbow</h3>
-      <ul>
-        <li v-for="color in colors">
-          {{ color }}
-        </li>
-      </ul>
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+</head>
+<body>
 
-      <ul>
-        <!-- <li v-for="item in classmate" v-on:click="DD101(item.name)"> -->
-        <li v-for="item in classmate" @click="DD101(item.name)">
-          {{ item.name }}
-        </li>
-      </ul>
-    </div>
-    <!--
+	<div id="app">
+		<h3>Rainbow</h3>
+		<ul>
+			<li v-for="color in colors">
+				{{color}}
+			</li>
+		</ul>
+
+		<ul>
+			<!-- <li v-for="item in classmate" v-on:click="DD101(item.name)"> -->
+			<li v-for="item in classmate" @click="DD101(item.name)">
+				{{item.name}}
+			</li>
+		</ul>
+	</div>
+<!--
 	for(color in colors){
 		use colors[color]
 	}
 -->
-    <script>
-      function test() {
-        alert(this);
-      }
-      test();
-      // this代表function執行的當下的外層物件
-      // 所以，this只有在執行的時候才存在
+	<script>
 
-      var data = {
-        name: "Anan",
-        checkNum: function() {
-          alert(this);
-        }
-      };
+		function test(){
+			alert(this);
+		}
+		test();
+		// this代表function執行的當下的外層物件
+		// 所以，this只有在執行的時候才存在
 
-      data.checkNum();
-    </script>
 
-    <script src="js/vue.js"></script>
-    <script>
-      new Vue({
-        el: "#app",
-        data: {
-          //宣告變數
-          message: "Hello, Vue!",
-          colors: [
-            "red",
-            "orange",
-            "yellow",
-            "green",
-            "blue",
-            "indigo",
-            "violet"
-          ],
-          classmate: [
-            { name: "Anan", age: 14 },
-            { name: "Steve", age: 18 },
-            { name: "Nina", age: 15 }
-          ]
-        },
-        methods: {
-          //function在此註冊
-          DD101: function(member) {
-            alert(`DD101 members: ${member}`);
-            alert(this);
-            alert(this.message);
-          },
-          temp() {}
-        }
-      });
-    </script>
-  </body>
+
+		var data = {
+			name: 'Anan',
+			checkNum: function(){
+				alert(this);
+			}
+		};
+
+		data.checkNum();
+
+	</script>
+
+	<script src="js/vue.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {			//宣告變數
+				message: 'Hello, Vue!',
+				colors: ['red','orange','yellow','green','blue','indigo','violet'],
+				classmate: [{name:'Anan',age:14},{name:'Steve',age:18},{name:'Nina',age:15}],
+			},
+			methods: {		//function在此註冊
+				DD101: function(member){
+					alert(`DD101 members: ${member}`);
+					alert(this);
+					alert(this.message);
+				},
+				temp(){},
+			},
+		});
+	</script>
+</body>
 </html>

@@ -22,26 +22,25 @@
         // });
         
         // 掛載2: $mount
-        // let vm = new Vue({
-        //     data: {
-        //         message: 'Hello, Vue!',             				
-        //     },
-        // });
-
-        // vm.$mount('#app');
+        let vm = new Vue({
+            data: {
+                message: 'Hello, Vue!',             				
+            },
+        });
+        vm.$mount('#app');
 
         // 掛載3: data
-        const data = {
-            x: 5,
-            y: 10,
-        };
-        let vm = new Vue({
-            el: '#app',
-			data: data,
-        });
+        // const data = {
+        //     x: 5,
+        //     y: 10,
+        // };
+        // let vm = new Vue({
+        //     el: '#app',
+		// 	data: data,
+        // });
 
-        vm.x = 100;
-        vm.$data = data;
+        // vm.x = 100;
+        // vm.$data = data;
 
 	</script>
 </body>

@@ -1,79 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>Todo List</title>
     <style>
-      * {
-        margin: 0px;
-        padding: 0px;
-      }
-      body {
-        background: pink;
-      }
-      #app {
-        background: rgb(238, 236, 211);
-        width: 250px;
-        padding: 10px;
-        margin: 50px auto;
-      }
-      div {
-        margin: 10px;
-      }
-      h3 {
-        color: maroon;
-        margin-top: 10px;
-      }
-      ol {
-        -webkit-padding-start: 20px;
-      }
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background: #ccc;
+        }
+        #app{
+            background: #fff;
+            width: 250px;
+            padding: 10px;
+            margin: 50px auto;
+        }
+        div{
+            margin: 10px;
+        }
+        h3{
+            color: maroon;
+			margin-top: 10px; 
+        }
+        ol{
+            -webkit-padding-start: 20px;
+        }
     </style>
     <!-- <script src="new.js"> </script> -->
-  </head>
-  <body>
-    <div id="app">
-      <!-- <form id="theForm"> -->
-      <fieldset>
-        <legend>Enter an item to be done</legend>
-        <div>
-          <label>Task: </label>
-          <input type="text" @keyup.enter="addTask(output)" v-model="output" />
-          <h3 v-if="output==''"></h3>
-          <h3 v-else>Todo List</h3>
-          <ol>
-            <li v-for="task in tasks">
-              {{ task }} -- <a href="#" @click="removeTask(task)">Delete</a>
-            </li>
-          </ol>
-        </div>
-        <!-- <div>
+</head>
+<body>
+    <div id="app">    
+        <!-- <form id="theForm"> -->
+            <fieldset>
+                <legend>Enter an item to be done</legend>
+                <div>
+                    <label>Task: </label>
+                    <input type="text" @keyup.enter="addTask(output)" v-model="output">
+                    <h3 v-if="output==''"></h3>
+                    <h3 v-else>Todo List</h3>
+                    <ol>
+                        <li v-for="task in tasks">
+							{{task}} -- <a href="#" @click="removeTask(task)">Delete</a>
+						</li>
+                    </ol>
+                 </div>
+                <!-- <div>
                     <input type="submit" id="submit" value="Add!">
                 </div>
                 <div id="output"></div> -->
-      </fieldset>
-      <!-- </form> -->
+            </fieldset>
+        <!-- </form> -->
     </div>
 
     <script src="js/vue.js"></script>
-    <script>
-      new Vue({
-        el: "#app",
-        data: {
-          //宣告變數
-          tasks: [],
-          output: ""
-          // isShow: false,
-        },
-        methods: {
-          addTask: function(item) {
-            this.tasks.push(item);
-          },
-          removeTask: function(item) {
-            this.tasks.splice(this.tasks.indexOf(item), 1);
-            // alert(this.tasks.indexOf(item))
-          }
-        }
-      });
-    </script>
-  </body>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {			//宣告變數
+				tasks: [],	
+				output: '',	
+				// isShow: false,		
+            },
+            methods: {
+                addTask: function(item){
+                    this.tasks.push(item);
+				},
+				removeTask: function(item){
+					this.tasks.splice(this.tasks.indexOf(item),1);
+					// alert(this.tasks.indexOf(item))
+				},
+            },
+		});
+	</script>
+</body>
 </html>

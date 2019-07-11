@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>Vue--life cycle</title>
-  </head>
-  <body>
-    <div id="app">
-      <h3>{{ count }}</h3>
-      <button @click="update">Update</button>
-      <button id="deleteButton">Delete</button>
+</head>
+<body>
+    <div id="app">  
+       <h3>{{count}}</h3> 
+       <button @click="update">Update</button>   
+       <button id="deleteButton">Delete</button>   
     </div>
 
     <script src="js/vue.js"></script>
-    <script>
-      var vm = new Vue({
-        el: "#app",
-        data: {
-          count: 0
-        },
-        methods: {
-          update() {
-            this.count++;
-          }
-        },
-        beforeCreate() {
-          //instance建立，屬性之前
-          console.log(`beforeCreate(): ${this.count}`);
-          console.log(`beforeCreate()--el: ${this.$el}`);
-        },
-        created() {
-          //instance已建立，屬性已綁定，但是DOM還沒有生成
-          console.log(`created(): ${this.count}`);
-          console.log(`created()--el: ${this.$el}`);
-        },
-        beforeMount() {
-          //掛載到HTML之前
-          console.log(`beforeMount()--el: ${this.$el}`);
-        },
-        mounted() {
-          //掛載到HTML之後
-          console.log(`mounted()--el: ${this.$el}`);
-        },
-        beforeUpdate() {
-          //內容被更新之前
-          console.log(`beforeUpdate(): ${this.count}`);
-        },
-        updated() {
-          //內容被更新之後
-          console.log(`updated(): ${this.count}`);
-        },
-        beforeDestroy() {
-          //移除Vue instance之前
-          console.log(`beforeDestroy(): ${this.count}`);
-        },
-        destroyed() {
-          //移除Vue instance之後
-          console.log(`destroyed(): ${this.count}`);
-        }
-      });
+	<script>        
+		var vm = new Vue({
+			el: '#app',
+			data: {
+                count: 0,             				
+            },
+            methods: {
+                update(){
+                    this.count++;
+                },
+            },
+            beforeCreate(){
+                //instance建立，屬性之前
+                console.log(`beforeCreate(): ${this.count}`);
+                console.log(`beforeCreate()--el: ${this.$el}`);
+            },
+            created(){
+                //instance已建立，屬性已綁定，但是DOM還沒有生成
+                console.log(`created(): ${this.count}`);
+                console.log(`created()--el: ${this.$el}`);
+            },
+            beforeMount(){
+                //掛載到HTML之前
+                console.log(`beforeMount()--el: ${this.$el}`);
+            },
+            mounted(){
+                //掛載到HTML之後
+                console.log(`mounted()--el: ${this.$el}`);
+            },
+            beforeUpdate(){
+                //內容被更新之前
+                console.log(`beforeUpdate(): ${this.count}`);
+            },
+            updated(){
+                //內容被更新之後
+                console.log(`updated(): ${this.count}`);
+            },
+            beforeDestroy(){
+                //移除Vue instance之前
+                console.log(`beforeDestroy(): ${this.count}`);
+            },
+            destroyed(){
+                //移除Vue instance之後
+                console.log(`destroyed(): ${this.count}`);
+            },
+        });   
+        
+        document.getElementById('deleteButton').onclick = function(){
+            vm.$destroy();
+        };
 
-      document.getElementById("deleteButton").onclick = function() {
-        vm.$destroy();
-      };
-    </script>
-  </body>
+	</script>
+</body>
 </html>

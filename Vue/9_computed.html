@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>Vue</title>
-  </head>
-  <body>
-    <div id="app">
-      台幣(TWD): <input type="text" v-model="TWD" />
-      <ul>
-        <li>日圓(JPY): {{ Japan }}</li>
-        <li>美金(USD): {{ USdollar }}</li>
-        <li>港幣(HKD): {{ HKdollar }}</li>
-        <li>歐元(EUR): {{ EURdollar }}</li>
-      </ul>
+</head>
+<body>
+    <div id="app">    
+       台幣(TWD): <input type="text" v-model="TWD">
+       <ul>
+           <li>日圓(JPY): {{Japan}}</li>
+           <li>美金(USD): {{USdollar}}</li>
+           <li>港幣(HKD): {{HKdollar}}</li>
+           <li>歐元(EUR): {{EURdollar}}</li>
+       </ul>
     </div>
 
     <script src="js/vue.js"></script>
-    <script>
-      new Vue({
-        el: "#app",
-        data: {
-          //宣告變數
-          message: "Hello, Vue!",
-          TWD: 0
-        },
-        methods: {
-          addTask: function(item) {
-            this.tasks.push(item);
-          }
-        },
-        computed: {
-          Japan() {
-            return (this.TWD / 0.2798).toFixed(2);
-          },
-          USdollar: function() {
-            return Math.round((this.TWD / 30.72) * 100) / 100.0;
-          },
-          HKdollar: function() {
-            return (this.TWD / 3.815).toFixed(2);
-          },
-          EURdollar: function() {
-            return (this.TWD / 34.24).toFixed(2);
-          }
-        }
-      });
-    </script>
-  </body>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {			//宣告變數
+                message: 'Hello, Vue!',
+                TWD: 0,				
+            },
+            methods: {
+                addTask: function(item){
+                    this.tasks.push(item);
+				},
+            },
+            computed: {
+                Japan(){
+                    return (this.TWD / 0.2798).toFixed(2);
+                },
+                USdollar: function(){
+                    return Math.round(this.TWD / 30.72 * 100) / 100.0;
+                },
+                HKdollar: function(){
+                    return (this.TWD / 3.815).toFixed(2);
+                },
+                EURdollar: function(){
+                    return (this.TWD / 34.24).toFixed(2);
+                },
+            },
+		});
+	</script>
+</body>
 </html>

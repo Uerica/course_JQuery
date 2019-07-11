@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>Vue</title>
-  </head>
-  <body>
-    <div id="app">
-      <p>現在時間: {{ now }}</p>
-      Your Height: <input type="text" v-model="height" /><br />
-      Your Weight: <input type="text" v-model="weight" /><br />
-      <!-- Your BMI is: <span>{{calculate}}</span> -->
-      <p>
-        有符合標準嗎(18.5~22)? <span>{{ standard }}</span>
-      </p>
+</head>
+<body>
+    <div id="app">  
+       <p>現在時間: {{now}}</p>  
+       Your Height: <input type="text" v-model="height"><br>
+       Your Weight: <input type="text" v-model="weight"><br>
+       <!-- Your BMI is: <span>{{calculate}}</span> -->
+       <p>
+           Meet the standard required(18.5~22)? <span>{{standard}}</span>
+       </p>      
     </div>
 
     <script src="js/vue.js"></script>
-    <script>
-      new Vue({
-        el: "#app",
-        data: {
-          //宣告變數
-          height: 0,
-          weight: 0
-        },
-        methods: {},
-        computed: {
-          //通常用在計算量大且複雜的運算
-          calculate() {
-            BMI = this.weight / Math.pow(this.height / 100, 2);
-            //BMI => 體重(公斤) / (身高 / 100)的平方
-            return BMI.toFixed(2);
-          },
-          now() {
-            let total = this.height + this.weight;
-
-            var today = new Date();
-            return today;
-          },
-          standard() {
-            if (this.calculate < 18.5) {
-              return `Your BMI is ${this.calculate}. Below standard!`;
-            } else if (this.calculate > 22) {
-              return `Your BMI is ${this.calculate}. Exceed standard!`;
-            } else {
-              return `Your BMI is ${this.calculate}. Standard-Compliant!`;
-            }
-          }
-        }
-      });
-    </script>
-  </body>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {			//宣告變數
+                height: 0,
+                weight: 0,               				
+            },
+            methods: {
+                
+            },
+            computed: {     //通常用在計算量大且複雜的運算                            
+                calculate(){
+                    BMI = this.weight / Math.pow(this.height / 100 , 2);
+                    //BMI => 體重(公斤) / (身高 / 100)的平方
+                    return BMI.toFixed(2);
+                },
+                now(){
+                    let total = this.height + this.weight;
+                    
+                    var today = new Date();
+                    return today;
+                },
+                standard(){
+                    if(this.calculate < 18.5){
+                        return `Your BMI is ${this.calculate}. Below standard!`;
+                    }else if(this.calculate > 22){
+                        return `Your BMI is ${this.calculate}. Exceed standard!`;
+                    }else{
+                        return `Your BMI is ${this.calculate}. Standard-Compliant!`;
+                    }
+                },
+            },
+		});
+	</script>
+</body>
 </html>
