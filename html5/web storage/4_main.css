@@ -1,10 +1,8 @@
-label,
-button {
-  text-transform: capitalize;
-  font: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+label,button{
+	text-transform: capitalize;
+	font: 18px Tahoma;
 }
-label {
-  width: 80px;
-  float: left;
+label{
+	width: 80px;
+	float: left;
 }
